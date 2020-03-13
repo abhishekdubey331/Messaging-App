@@ -2,11 +2,11 @@ package com.vokal.messaging.utils
 
 import android.content.ContentResolver
 import android.net.Uri
+import com.github.marlonlom.utilities.timeago.TimeAgo
 import com.vokal.messaging.data.SimpleMessage
 import java.util.Date
 
 class MessageHelper {
-
 
     fun readMessagesFromInbox(contentResolver: ContentResolver, callback: (result: MutableList<SimpleMessage>) -> Unit) {
         val messageList: MutableList<SimpleMessage> = mutableListOf()
@@ -24,7 +24,7 @@ class MessageHelper {
                 str += smsInboxCursor.getString(messageBody)
                 messageList.add(SimpleMessage(messageBody = smsInboxCursor.getString(messageBody),
                         address = smsInboxCursor.getString(address),
-                        date = smsInboxCursor.getString(date),
+                        time = TimeAgo.using(smsInboxCursor.getString(date).toLong()).capitalize(),
                         person = smsInboxCursor.getString(person)
                 ))
             } while (smsInboxCursor.moveToNext())

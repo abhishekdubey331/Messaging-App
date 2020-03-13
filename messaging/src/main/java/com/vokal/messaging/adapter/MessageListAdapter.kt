@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.core.base.extensions.toast
 import com.github.marlonlom.utilities.timeago.TimeAgo
 import com.vokal.messaging.R
 import com.vokal.messaging.customviews.RecyclerSectionItemDecoration
@@ -37,23 +36,18 @@ class MessageListAdapter(private val messageList: MutableList<SimpleMessage>,
                 message_sender.text = address
                 message_body.text = messageBody
                 firstChar.text = address?.take(1)
-                date?.toLong()?.let {
-                    time.text = TimeAgo.using(it).capitalize()
-                }
+                date_tv.text = time
                 containerView.setOnClickListener { onClick(this) }
             }
         }
     }
 
     override fun isSection(position: Int): Boolean {
-        return (position == 0 ||
-                TimeAgo.using(messageList[position].date!!.toLong())
-                        .capitalize() != TimeAgo
-                .using(messageList[position - 1].date!!.toLong()).capitalize())
+        return (position == 0 || messageList[position].time != messageList[position - 1].time)
 
     }
 
     override fun getSectionHeader(position: Int): CharSequence {
-        return TimeAgo.using(messageList[position].date!!.toLong()).capitalize()
+        return messageList[position].time.toString()
     }
 }

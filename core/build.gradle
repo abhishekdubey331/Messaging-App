@@ -67,6 +67,7 @@ dependencies {
     api deps.square.okhttp
     api deps.square.gsonConverter
     api deps.square.retrofitRxAdapter
+    api deps.square.logger
 
     implementation deps.facebook.stetho
     implementation deps.facebook.networkInterceptor

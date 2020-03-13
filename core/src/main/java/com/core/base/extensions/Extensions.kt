@@ -3,6 +3,7 @@ package com.core.base.extensions
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
+import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 
@@ -18,4 +19,17 @@ fun Context.toast(message: CharSequence) =
 
 inline fun <R> R?.orElse(block: () -> R): R {
     return this ?: block()
+}
+
+fun View.makeVisible() {
+    visibility = View.VISIBLE
+}
+
+fun View.makeInVisible() {
+    visibility = View.INVISIBLE
+}
+
+
+fun View.gone() {
+    visibility = View.GONE
 }

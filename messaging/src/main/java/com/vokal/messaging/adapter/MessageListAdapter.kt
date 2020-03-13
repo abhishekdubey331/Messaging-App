@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.message_row.*
 class MessageListAdapter(private val messageList: MutableList<SimpleMessage>)
     : RecyclerView.Adapter<MessageListAdapter.ViewHolder>(), RecyclerSectionItemDecoration.SectionCallback {
 
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindData(messageList[position])
     }
@@ -41,15 +42,21 @@ class MessageListAdapter(private val messageList: MutableList<SimpleMessage>)
 
     override fun isSection(position: Int): Boolean {
         return (position == 0 || messageList[position].time != messageList[position - 1].time)
-
     }
 
     override fun getSectionHeader(position: Int): CharSequence {
         return messageList[position].time.toString()
     }
 
-    fun updateItems(it: List<SimpleMessage>) {
+    fun addItems(it: Set<SimpleMessage>) {
         messageList.addAll(it)
         notifyDataSetChanged()
+    }
+
+    fun addPaginatedData(listItems: Set<SimpleMessage>) {
+        val size = listItems.size
+        this.messageList.addAll(listItems)
+        val sizeNew = this.messageList.size
+        notifyItemRangeChanged(size, sizeNew)
     }
 }

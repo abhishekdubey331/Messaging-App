@@ -12,8 +12,8 @@ import com.core.base.extensions.getDp
 import com.core.base.extensions.makeInVisible
 import com.core.base.extensions.makeVisible
 import com.core.base.extensions.orElse
-import com.core.base.extensions.snack
 import com.core.base.extensions.toast
+import com.core.base.utils.AppPreferences
 import com.core.base.utils.PaginationScrollListener
 import com.vokal.messaging.adapter.MessageListAdapter
 import com.vokal.messaging.customviews.RecyclerSectionItemDecoration

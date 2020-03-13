@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.takuji31.Koreference:koreference:2.0.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/892e86734e1bf68bfc6849755b4c5698/jetified-koreference-2.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/892e86734e1bf68bfc6849755b4c5698/jetified-koreference-2.0.0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.takuji31.Koreference/koreference/2.0.0/4d1b0b992ec5afdb9652015bd0413c2e362d1d24/koreference-2.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

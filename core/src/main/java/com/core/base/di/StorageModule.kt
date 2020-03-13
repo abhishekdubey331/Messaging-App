@@ -1,8 +1,7 @@
 package com.core.base.di
 
 import android.content.Context
-import android.content.SharedPreferences
-import android.preference.PreferenceManager
+import com.core.base.utils.AppPreferences
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -11,7 +10,7 @@ import javax.inject.Singleton
 class StorageModule {
     @Provides
     @Singleton
-    fun providesSharedPreferences(context: Context): SharedPreferences {
-        return PreferenceManager.getDefaultSharedPreferences(context)
+    fun providesSharedPreferences(context: Context): AppPreferences {
+        return AppPreferences(context = context)
     }
 }

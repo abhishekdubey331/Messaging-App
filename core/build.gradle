@@ -37,6 +37,9 @@ android {
     }
 }
 
+repositories {
+    maven { url 'https://jitpack.io' }
+}
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
@@ -50,6 +53,7 @@ dependencies {
     api deps.android.lifecycleCommon
     api deps.android.roomRuntime
     api deps.android.roomRx
+    api deps.android.sharedPref
 
     api deps.kotlin.stdlib
 

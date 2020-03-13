@@ -38,7 +38,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     fun askMessagePermission() {
         ActivityCompat.requestPermissions(this, arrayOf(
-                Manifest.permission.READ_SMS), REQUEST_CODE_PERMISSION_READ_SMS)
+                Manifest.permission.READ_SMS, Manifest.permission.RECEIVE_SMS), REQUEST_CODE_PERMISSION_READ_SMS)
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, thePermissions: Array<String>, theGrantResults: IntArray) {

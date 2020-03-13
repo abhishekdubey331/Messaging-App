@@ -43,7 +43,9 @@ android {
 androidExtensions {
     experimental = true
 }
-
+repositories {
+    maven { url 'https://jitpack.io' }
+}
 dependencies {
     implementation project(':core')
     kapt deps.android.roomCompiler

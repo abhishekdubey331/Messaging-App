@@ -1,8 +1,8 @@
 package com.core.base.di
 
 import android.content.Context
-import android.content.SharedPreferences
 import com.core.base.networking.Scheduler
+import com.core.base.utils.AppPreferences
 import com.squareup.picasso.Picasso
 import dagger.Component
 import retrofit2.Retrofit
@@ -18,7 +18,7 @@ interface CoreComponent {
 
     fun picasso(): Picasso
 
-    fun sharedPreferences(): SharedPreferences
+    fun appPrefs(): AppPreferences
 
     fun scheduler(): Scheduler
 }

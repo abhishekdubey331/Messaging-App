@@ -1,7 +1,7 @@
 package com.core.base.testing
 
 import android.annotation.SuppressLint
-import android.support.annotation.VisibleForTesting
+import androidx.annotation.VisibleForTesting
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import okhttp3.HttpUrl
 import okhttp3.OkHttpClient

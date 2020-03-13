@@ -50,6 +50,4 @@ class MessageListActivity : BaseActivity() {
             smsInboxCursor.close()
         }
     }
-
-
 }

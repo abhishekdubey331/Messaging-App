@@ -4,18 +4,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.core.base.extensions.toast
 import com.github.marlonlom.utilities.timeago.TimeAgo
 import com.vokal.messaging.R
+import com.vokal.messaging.customviews.RecyclerSectionItemDecoration
 import com.vokal.messaging.data.SimpleMessage
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.item_message.*
-import java.text.SimpleDateFormat
-import java.util.Date
+import kotlinx.android.synthetic.main.message_row.*
 
 
 class MessageListAdapter(private val messageList: MutableList<SimpleMessage>,
                          private val onClick: (SimpleMessage) -> Unit)
-    : RecyclerView.Adapter<MessageListAdapter.ViewHolder>() {
+    : RecyclerView.Adapter<MessageListAdapter.ViewHolder>(), RecyclerSectionItemDecoration.SectionCallback {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindData(messageList[position])
@@ -25,7 +25,7 @@ class MessageListAdapter(private val messageList: MutableList<SimpleMessage>,
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_message, parent, false).let {
+                .inflate(R.layout.message_row, parent, false).let {
                     ViewHolder(it, onClick)
                 }
     }
@@ -43,5 +43,17 @@ class MessageListAdapter(private val messageList: MutableList<SimpleMessage>,
                 containerView.setOnClickListener { onClick(this) }
             }
         }
+    }
+
+    override fun isSection(position: Int): Boolean {
+        return (position == 0 ||
+                TimeAgo.using(messageList[position].date!!.toLong())
+                        .capitalize() != TimeAgo
+                .using(messageList[position - 1].date!!.toLong()).capitalize())
+
+    }
+
+    override fun getSectionHeader(position: Int): CharSequence {
+        return TimeAgo.using(messageList[position].date!!.toLong()).capitalize()
     }
 }

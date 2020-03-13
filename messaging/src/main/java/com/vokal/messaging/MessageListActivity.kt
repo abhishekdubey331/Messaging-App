@@ -6,8 +6,10 @@ import com.core.base.application.BaseActivity
 import com.core.base.extensions.checkSmsReadPermission
 import com.core.base.extensions.toast
 import com.vokal.messaging.adapter.MessageListAdapter
+import com.vokal.messaging.customviews.RecyclerSectionItemDecoration
 import com.vokal.messaging.utils.MessageHelper
 import kotlinx.android.synthetic.main.activity_message_list.*
+
 
 class MessageListActivity : BaseActivity() {
 
@@ -32,6 +34,10 @@ class MessageListActivity : BaseActivity() {
             mAdapter = MessageListAdapter(it) {
 
             }
+            val sectionItemDecoration = RecyclerSectionItemDecoration(resources.getDimensionPixelSize(R.dimen.activity_side_margin),
+                    true,
+                    mAdapter)
+            recyclerViewMessages.addItemDecoration(sectionItemDecoration)
             recyclerViewMessages.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
             recyclerViewMessages.adapter = mAdapter
         }

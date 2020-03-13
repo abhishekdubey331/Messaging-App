@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.shuhart.stickyheader:stickyheader:1.0.6@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/49ac2e0b140e7bb97db741c703e8dbd5/jetified-stickyheader-1.0.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/49ac2e0b140e7bb97db741c703e8dbd5/jetified-stickyheader-1.0.6/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.shuhart.stickyheader/stickyheader/1.0.6/844ea44bcc936f5a6c698b363695c166984aea44/stickyheader-1.0.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

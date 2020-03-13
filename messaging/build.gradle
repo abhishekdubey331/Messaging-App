@@ -65,4 +65,5 @@ dependencies {
     androidTestImplementation deps.test.livedataTesting
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.github.marlonlom:timeago:4.0.1'
+    implementation 'com.shuhart.stickyheader:stickyheader:1.0.6'
 }

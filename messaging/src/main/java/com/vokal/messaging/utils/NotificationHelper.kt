@@ -33,7 +33,7 @@ class NotificationHelper(private val mContext: Context, private val appPrefs: Ap
         val resultPendingIntent = PendingIntent.getActivity(
                 mContext,
                 0 /* Request code */, resultIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT
+                PendingIntent.FLAG_CANCEL_CURRENT
         )
 
         mBuilder = NotificationCompat.Builder(mContext, NOTIFICATION_CHANNEL_ID)

@@ -13,7 +13,6 @@ import com.core.base.extensions.makeInVisible
 import com.core.base.extensions.makeVisible
 import com.core.base.extensions.orElse
 import com.core.base.extensions.toast
-import com.core.base.utils.AppPreferences
 import com.core.base.utils.PaginationScrollListener
 import com.vokal.messaging.adapter.MessageListAdapter
 import com.vokal.messaging.customviews.RecyclerSectionItemDecoration
@@ -21,6 +20,7 @@ import com.vokal.messaging.di.MessageDH
 import com.vokal.messaging.di.MessageListViewModelFactory
 import com.vokal.messaging.viewmodel.MessageListViewModel
 import kotlinx.android.synthetic.main.activity_message_list.*
+import kotlinx.android.synthetic.main.no_content_available.*
 import kotlinx.android.synthetic.main.progress_loading.*
 import javax.inject.Inject
 
@@ -28,7 +28,6 @@ import javax.inject.Inject
 class MessageListActivity : BaseActivity() {
 
     private val component by lazy { MessageDH.messageComponent() }
-
     @Inject
     lateinit var viewModelFactoryMessage: MessageListViewModelFactory
 
@@ -41,17 +40,10 @@ class MessageListActivity : BaseActivity() {
         ViewModelProviders.of(this, viewModelFactoryMessage).get(MessageListViewModel::class.java)
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_message_list)
         component.inject(this)
-        setUpRecyclerView()
-        if (checkSmsReadPermission()) {
-            messageListViewModel.loadMessages(currentPage++, applicationContext)
-        } else {
-            askMessagePermission()
-        }
         messageListViewModel.messagesListLiveData().observe(this, Observer {
             it?.let {
                 if (currentPage < 1) messageListAdapter.addPaginatedData(it) else messageListAdapter.addItems(it)
@@ -61,14 +53,23 @@ class MessageListActivity : BaseActivity() {
             progress_circular_rv.makeInVisible()
             setPadding(0f)
             isLoading = false
+            if (it.isNullOrEmpty())
+                no_content_layout.makeVisible()
         })
 
         messageListViewModel.errorLiveData().observe(this, Observer {
             it?.let { toast(it) }.orElse { toast(getString(R.string.no_messages_found)) }
         })
+        setUpRecyclerView()
+        if (checkSmsReadPermission()) {
+            messageListViewModel.loadMessages(currentPage++, applicationContext)
+        } else {
+            askMessagePermission()
+        }
     }
 
     private fun setUpRecyclerView() {
+        messageListAdapter.clearAllItems()
         val sectionItemDecoration = RecyclerSectionItemDecoration(resources.getDimensionPixelSize(R.dimen.activity_side_margin),
                 true,
                 messageListAdapter)

@@ -23,6 +23,6 @@
         <include layout="@layout/progress_loading" />
 
     </FrameLayout>
-
+    <include layout="@layout/no_content_available" />
 
 </RelativeLayout>

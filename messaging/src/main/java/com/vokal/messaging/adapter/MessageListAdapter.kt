@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.core.base.extensions.gone
 import com.core.base.extensions.makeVisible
 import com.core.base.utils.AppPreferences
+import com.orhanobut.logger.Logger
 import com.vokal.messaging.R
 import com.vokal.messaging.customviews.RecyclerSectionItemDecoration
 import com.vokal.messaging.data.SimpleMessage
@@ -38,6 +39,7 @@ class MessageListAdapter(private val messageList: MutableList<SimpleMessage>, pr
             with(simpleMessage) {
                 message_sender.text = address
                 message_body.text = messageBody
+                Logger.d(messageBody)
                 firstChar.text = address?.take(1)
                 date_tv.text = time
                 messageBody?.let {
@@ -48,7 +50,9 @@ class MessageListAdapter(private val messageList: MutableList<SimpleMessage>, pr
                     }
                     appPrefs.notificationMessageBody = ""
                 }
-
+                if (time.contentEquals(itemView.context.getString(R.string.just_now))) {
+                    status_imv.makeVisible()
+                }
             }
         }
     }
@@ -58,12 +62,19 @@ class MessageListAdapter(private val messageList: MutableList<SimpleMessage>, pr
     }
 
     override fun getSectionHeader(position: Int): CharSequence {
-        return messageList[position].time.toString()
+        return messageList[position].time
     }
 
     fun addItems(it: Set<SimpleMessage>) {
         messageList.addAll(it)
         notifyDataSetChanged()
+    }
+
+    fun clearAllItems() {
+        if (messageList.isNotEmpty()) {
+            messageList.clear()
+            notifyDataSetChanged()
+        }
     }
 
     fun addPaginatedData(listItems: Set<SimpleMessage>) {

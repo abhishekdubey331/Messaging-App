@@ -9,6 +9,7 @@ android {
 
 
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         applicationId "com.vokal.messaging"
         minSdkVersion 19
         targetSdkVersion 29

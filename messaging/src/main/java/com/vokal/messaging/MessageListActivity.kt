@@ -28,6 +28,7 @@ import javax.inject.Inject
 class MessageListActivity : BaseActivity() {
 
     private val component by lazy { MessageDH.messageComponent() }
+
     @Inject
     lateinit var viewModelFactoryMessage: MessageListViewModelFactory
 
@@ -66,6 +67,12 @@ class MessageListActivity : BaseActivity() {
         } else {
             askMessagePermission()
         }
+    }
+
+    override fun permissionDenied() {
+        progress_circular_rv.makeInVisible()
+        no_content_layout.makeVisible()
+        error_message.text = getString(R.string.permission_required)
     }
 
     private fun setUpRecyclerView() {

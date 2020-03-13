@@ -48,9 +48,13 @@ abstract class BaseActivity : AppCompatActivity() {
             return
         }
         if (isUserCheckNeverAskAgain()) {
+            permissionDenied()
             return
         }
+        permissionDenied()
     }
+
+    abstract fun permissionDenied()
 
     abstract fun permissionGrantedReadSms()
 }

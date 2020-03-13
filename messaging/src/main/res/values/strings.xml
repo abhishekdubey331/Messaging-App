@@ -3,4 +3,5 @@
     <string name="no_messages_found">No messages found</string>
     <string name="showing_messages_till">Showing messages till 3 days</string>
     <string name="just_now">Just now</string>
+    <string name="permission_required">Without SMS permission this app would not work.</string>
 </resources>

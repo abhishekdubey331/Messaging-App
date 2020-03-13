@@ -10,9 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ace55f01-7c74-4bb3-a04f-59e7b96a0b34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_orhanobut_logger_2_2_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/core/base/utils/PaginationScrollListener.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging/src/main/res/layout/full_message_layuot.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging/src/main/res/layout/progress_loading.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
@@ -23,26 +21,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/core/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/core/core.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/core/base/application/CoreApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/core/base/application/CoreApp.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/core/base/extensions/Extensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/core/base/extensions/Extensions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging/messaging.iml" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/messaging.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/MessageDH.kt" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/di/MessageDH.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/res/values/dimens.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/MessageListActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/MessageListActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/adapter/MessageListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/adapter/MessageListAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/data/SimpleMessage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/data/SimpleMessage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/di/ListComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/di/MessageComponent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/di/ListScope.kt" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/di/MessageScope.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/di/ListViewModelFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/di/MessageListViewModelFactory.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/utils/MessageHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/utils/MessageHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/viewmodel/MessageListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/src/main/java/com/vokal/messaging/viewmodel/MessageListViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messaging/src/main/res/layout/activity_message_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/src/main/res/layout/activity_message_list.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messaging/src/main/res/layout/message_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/src/main/res/layout/message_row.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/messaging/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,8 +55,8 @@
         <option value="valueResourceFile" />
         <option value="resourceFile" />
         <option value="Kotlin Class" />
-        <option value="layoutResourceFile" />
         <option value="Kotlin File" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>

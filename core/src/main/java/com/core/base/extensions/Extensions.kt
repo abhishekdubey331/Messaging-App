@@ -3,9 +3,12 @@ package com.core.base.extensions
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
+import android.content.res.Resources
+import android.util.TypedValue
 import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import com.google.android.material.snackbar.Snackbar
 
 
 fun Context.checkSmsReadPermission(): Boolean {
@@ -29,7 +32,16 @@ fun View.makeInVisible() {
     visibility = View.INVISIBLE
 }
 
-
 fun View.gone() {
     visibility = View.GONE
 }
+
+fun Context.getDp(dp: Float): Int {
+    val r: Resources = resources
+    return TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            dp,
+            r.displayMetrics
+    ).toInt()
+}
+

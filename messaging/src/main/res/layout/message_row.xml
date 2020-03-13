@@ -13,8 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bottom_border"
-            android:orientation="horizontal"
-            android:padding="@dimen/def_small_margin">
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/firstChar"
@@ -35,7 +34,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/activity_side_margin"
                 android:layout_marginTop="@dimen/activity_side_margin"
-                android:layout_marginBottom="@dimen/activity_side_margin"
+                android:layout_marginBottom="@dimen/eight_dp_margin"
                 android:orientation="vertical">
 
 
@@ -65,11 +64,9 @@
 
                 <TextView
                     android:id="@+id/date_tv"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="@dimen/top_margin"
-                    android:gravity="end"
+                    android:layout_gravity="center_vertical|end"
                     android:maxLines="1"
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp"

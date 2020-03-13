@@ -42,24 +42,14 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, thePermissions: Array<String>, theGrantResults: IntArray) {
-        // It's not our expect permission
         if (requestCode != REQUEST_CODE_PERMISSION_READ_SMS) return
-
         if (checkSmsReadPermission()) {
-            // Success case: Get the permission
-            // Do something and return
             permissionGrantedReadSms()
             return
         }
-
         if (isUserCheckNeverAskAgain()) {
-            // NeverAskAgain case - Never Ask Again has been checked
-            // Do something and return
             return
         }
-
-        // Failure case: Not getting permission
-        // Do something here
     }
 
     abstract fun permissionGrantedReadSms()

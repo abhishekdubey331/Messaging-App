@@ -1,53 +1,39 @@
 package com.vokal.messaging
 
-import android.net.Uri
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.core.base.application.BaseActivity
 import com.core.base.extensions.checkSmsReadPermission
 import com.core.base.extensions.toast
-import com.vokal.messaging.data.SimpleMessage
+import com.vokal.messaging.adapter.MessageListAdapter
+import com.vokal.messaging.utils.MessageHelper
+import kotlinx.android.synthetic.main.activity_message_list.*
 
 class MessageListActivity : BaseActivity() {
 
-
-    private val smsList: MutableList<SimpleMessage> = mutableListOf()
+    private val messageHelper = MessageHelper()
+    private lateinit var mAdapter: MessageListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_message_list)
         if (checkSmsReadPermission()) {
-            readMessagesFromInbox()
+            messageHelper.readMessagesFromInbox(contentResolver) {
+                toast(it.size.toString())
+                permissionGrantedReadSms()
+            }
         } else {
             askMessagePermission()
         }
     }
 
     override fun permissionGrantedReadSms() {
-        readMessagesFromInbox()
-        toast(smsList.size.toString())
-    }
+        messageHelper.readMessagesFromInbox(contentResolver) {
+            mAdapter = MessageListAdapter(it) {
 
-
-    private fun readMessagesFromInbox() {
-        val smsInboxCursor = contentResolver.query(Uri.parse("content://sms/inbox"), null, null, null, null)
-        smsInboxCursor?.let {
-            val messageBody = smsInboxCursor.getColumnIndex("body")
-            val address = smsInboxCursor.getColumnIndex("address")
-            val date = smsInboxCursor.getColumnIndex("date")
-            val person = smsInboxCursor.getColumnIndex("person")
-            if (messageBody < 0 || !smsInboxCursor.moveToFirst()) return
-            do {
-                var str = "SMS from : " + smsInboxCursor.getString(address) + "\n"
-                str += smsInboxCursor.getString(messageBody)
-                if (smsList.size < 10) {
-                    smsList.add(SimpleMessage(messageBody = smsInboxCursor.getString(messageBody),
-                            address = smsInboxCursor.getString(address),
-                            date = smsInboxCursor.getString(date),
-                            person = smsInboxCursor.getString(person)
-                    ))
-                }
-            } while (smsInboxCursor.moveToNext())
-            smsInboxCursor.close()
+            }
+            recyclerViewMessages.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+            recyclerViewMessages.adapter = mAdapter
         }
     }
 }

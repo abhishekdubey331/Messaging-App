@@ -7,7 +7,7 @@
     tools:context=".MessageListActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewRepositories"
+        android:id="@+id/recyclerViewMessages"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />

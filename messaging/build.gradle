@@ -63,4 +63,6 @@ dependencies {
     androidTestImplementation deps.test.atslRules
     androidTestImplementation deps.test.roomTesting
     androidTestImplementation deps.test.livedataTesting
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.github.marlonlom:timeago:4.0.1'
 }

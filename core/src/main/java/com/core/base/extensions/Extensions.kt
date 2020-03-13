@@ -14,3 +14,8 @@ fun Context.checkSmsReadPermission(): Boolean {
 
 fun Context.toast(message: CharSequence) =
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+
+
+inline fun <R> R?.orElse(block: () -> R): R {
+    return this ?: block()
+}

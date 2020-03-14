@@ -20,10 +20,10 @@ Some of the features of the app include
 
 
 ## Screenshot 1
-<img src="https://github.com/abhishekdubey331/News-Room/blob/master/screens/screen_1.jpg">
+<img src="https://github.com/abhishekdubey331/Messaging-App/blob/master/screens/screen_1.jpg">
 
 ## Screenshot 2
-<img src="https://github.com/abhishekdubey331/News-Room/blob/master/screens/screen_2.jpg">
+<img src="https://github.com/abhishekdubey331/Messaging-App/blob/master/screens/screen_2.jpg">
 
 
 

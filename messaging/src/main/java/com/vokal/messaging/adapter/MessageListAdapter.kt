@@ -39,7 +39,6 @@ class MessageListAdapter(private val messageList: MutableList<SimpleMessage>, pr
             with(simpleMessage) {
                 message_sender.text = address
                 message_body.text = messageBody
-                Logger.d(messageBody)
                 firstChar.text = address?.take(1)
                 date_tv.text = time
                 messageBody?.let {
